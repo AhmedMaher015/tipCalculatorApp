@@ -26,37 +26,56 @@
       <div class="components">
         <label for="bill">Bill</label>
         <div class="bill-container">
-          <input type="number" name="Bill" id="bill" placeholder="0">
+          <input type="text" name="Bill" id="bill" placeholder="0">
           <img src="/images/icon-dollar.svg" alt="dollar icon">
         </div>
+        <p class="bill-error"></p>
+       
   
         <label>Select Tip %</label>
         <div class="tip-value">
           <button class="btn-5">5%</button>
           <button class="btn-10">10%</button>
-          <button class="btn-15">15%</button>
+          <button class="btn-15 selected">15%</button>
           <button class="btn-25">25%</button>
           <button class="btn-50">50%</button>
           <input type="text" class="custom" placeholder="Custom">
         </div>
-  
+        <p class="custom-error"></p>
+
         <label for="people">Number of People</label>
         <div class="people-number">
-          <input type="number" name="People Number" id="people" placeholder="0" class="people-number-value">
+          <input type="text" name="People Number" id="people" placeholder="0" class="people-number-value">
           <img src="/images/icon-person.svg" alt="person icon">
         </div>
+        <p class="people-number-error"></p>
+        
   
       </div>
       <div class="result">
   
         <div class="tip-amount">
-          <h3>Tip Amount<span>/person</span></h3>
-          <p class="tip-amount-result">$00.00</p>
+
+          <div>
+            <h3>Tip Amount</h3>
+            <p>/person</p>
+          </div>
+
+          <div>
+            <p class="tip-amount-result">$00.00</p>
+          </div>
+          
         </div>
   
         <div class="total">
-          <h3>Total<span>/person</span></h3>
-          <p class="total-result">$00.00</p>
+          <div>
+            <h3>Total</h3>
+            <p>/person<p>
+          </div>
+
+          <div>
+            <p class="total-result">$00.00</p>
+          </div>  
         </div>
   
         <button class="reset">Reset</button>
