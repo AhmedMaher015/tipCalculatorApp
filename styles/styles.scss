@@ -1,4 +1,3 @@
-
 // Colors
 $cyan: hsl(172, 67%, 45%);
 $Very-dark-cyan: hsl(183, 100%, 15%);
@@ -10,224 +9,228 @@ $White-color: hsl(0, 0%, 100%);
 
 // input Styles
 @mixin input-style {
-    position: relative;
+  position: relative;
 
-    input {
-            width: 100%;
-            background-color: $Light-grayish-cyan-2;
-            color: $Very-dark-cyan;
-            padding: 6px 10px;
-            border: 1px solid $White-color;
-            font-size: 1.5em;
-            text-align: right;
+  input {
+    width: 100%;
+    background-color: $Light-grayish-cyan-2;
+    color: $Very-dark-cyan;
+    padding: 6px 10px;
+    border: 1px solid $White-color;
+    font-size: 1.5em;
+    text-align: right;
 
-            &:focus {
-                outline: none;
-            }
-
-            &:hover{
-                border: 2px solid $cyan;
-            }
-        }
-
-    img {
-            position: absolute;
-            left: 3%;
-            top: 25%;
+    &:focus {
+      outline: none;
     }
+
+    &:hover {
+      border: 2px solid $cyan;
+    }
+  }
+
+  img {
+    position: absolute;
+    left: 3%;
+    top: 25%;
+  }
 }
 
 // btn Style
-@mixin  btn-style($wid) {
-    width: $wid;
-    padding: 5px;
-    font-size: 1.5em;
-    margin: 10px 0px;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
+@mixin btn-style($wid) {
+  width: $wid;
+  padding: 5px;
+  font-size: 1.5em;
+  margin: 10px 0px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 }
 
+@mixin result-total-amount {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  text-align: left;
+  // align-items: stretch;
 
-@mixin  result-total-amount {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    text-align: left;
-    // align-items: stretch;
-
-    div {
-        line-height: 0.5;
-        margin-bottom: 11%;
-        h3 {
-            color: $White-color;
-        }
-
-        p {
-            color: $Dark-grayish-cyan-2;
-        }
-
+  div {
+    line-height: 0.5;
+    margin-bottom: 11%;
+    h3 {
+      color: $White-color;
     }
+
+    p {
+      color: $Dark-grayish-cyan-2;
+    }
+  }
 }
 
 * {
-    box-sizing: border-box;
-    font-size: 16px;
+  box-sizing: border-box;
+  font-size: 16px;
 }
 
 body {
-    background-color: $Light-grayish-cyan-1;
-    font-family: 'Space Mono', monospace;
+  background-color: $Light-grayish-cyan-1;
+  font-family: "Space Mono", monospace;
 }
 
-header , footer {
-    padding: 10px;
-    text-align: center;
+header,
+footer {
+  padding: 10px;
+  text-align: center;
 }
 
 main {
-    background-color: $White-color;
-    padding: 30px;
-    margin: 10px auto;
-    border-radius: 30px;
-    line-height: 2;
+  background-color: $White-color;
+  padding: 30px;
+  margin: 10px auto;
+  border-radius: 30px;
+  line-height: 2;
+  display: flex;
+  flex-flow: column nowrap;
+  .components {
+    label {
+      font-size: 0.95em;
+      color: $Very-dark-cyan;
+    }
+
+    .bill-container {
+      @include input-style();
+    }
+
+    .people-number {
+      @include input-style();
+    }
+
+    .tip-value {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+
+      .btn-5,
+      .btn-10,
+      .btn-15,
+      .btn-25,
+      .btn-50 {
+        @include btn-style(45%);
+        background-color: $Very-dark-cyan;
+        color: $White-color;
+        border: 1px solid $Very-dark-cyan;
+
+        &:hover {
+          background-color: hsla(183, 100%, 15%, 0.801);
+        }
+      }
+
+      .custom {
+        @include btn-style(45%);
+        background-color: $Light-grayish-cyan-2;
+        border: 1px solid $Light-grayish-cyan-2;
+        color: $Very-dark-cyan;
+
+        &:focus {
+          border: 2px solid $cyan;
+        }
+      }
+    }
+  }
+
+  .result {
+    background-color: $Very-dark-cyan;
+    padding: 15px;
+    margin: 20px 0px;
+    border-radius: 15px;
+    text-align: center;
     display: flex;
-    flex-flow: column nowrap;
-        .components {
+    flex-flow: column wrap;
+    justify-content: space-between;
+    .tip-amount,
+    .total {
+      @include result-total-amount();
 
-            label {
-                font-size: .95em;
-                color: $Very-dark-cyan;
-            }
+      .tip-amount-result,
+      .total-result {
+        color: $cyan;
+        font-size: 2em;
+      }
+    }
 
-            .bill-container {
-                @include input-style();
-            }
+    .reset {
+      background-color: $cyan;
+      color: $Very-dark-cyan;
+      width: 99%;
+      padding: 10px;
+      font-size: 1.5em;
+      font-weight: bold;
+      border-radius: 7px;
+      border: 1px solid $cyan;
+      cursor: pointer;
+      &:focus {
+        outline: 0;
+      }
 
-            .people-number {
-                @include input-style();
-            }
+      &:hover {
+        background-color: hsla(172, 67%, 45%, 0.788);
+      }
 
-            .tip-value {
-                display: flex;
-                flex-flow: row wrap;
-                justify-content: space-between;
-                
-                .btn-5 , .btn-10 , .btn-15 , .btn-25 , .btn-50 {
-                    @include btn-style(45%);
-                    background-color: $Very-dark-cyan;
-                    color: $White-color;
-                    border: 1px solid $Very-dark-cyan;
-
-                    &:hover {
-                        background-color: hsla(183, 100%, 15%, 0.801); 
-                    }
-                }
-
-                .custom {
-                    @include btn-style(45%);
-                    background-color: $Light-grayish-cyan-2;
-                    border: 1px solid $Light-grayish-cyan-2;
-                    color: $Very-dark-cyan;
-
-                    &:focus{
-                        border: 2px solid $cyan;
-                    }
-                }
-
-            }
-
-        }
-            
-        
-        .result {
-            background-color: $Very-dark-cyan;
-            padding: 15px;
-            margin: 20px 0px;
-            border-radius: 15px;
-            text-align: center;
-            display: flex;
-            flex-flow: column wrap;
-            justify-content: space-between;
-            .tip-amount , .total {
-              @include result-total-amount();
-              
-              .tip-amount-result , .total-result{
-                    color: $cyan;
-                    font-size: 2em;
-                } 
-            }
-
-            .reset {
-                background-color: $cyan;
-                color: $Very-dark-cyan;
-                width: 99%;
-                padding: 10px;
-                font-size: 1.5em;
-                font-weight: bold;
-                border-radius: 7px;
-                border: 1px solid $cyan;
-                cursor: pointer;
-                &:focus {
-                    outline: 0;
-                }
-
-                &:hover {
-                    background-color: hsla(172, 67%, 45%, 0.788);
-                }
-
-                &:active {
-                    background-color: $Light-grayish-cyan-1;
-                }
-
-            }
-
-        }
+      &:active {
+        background-color: $Light-grayish-cyan-1;
+      }
+    }
+  }
 }
 
-
 .selected {
-    background-color: $Light-grayish-cyan-1 !important;
-    color: $Very-dark-cyan !important;
-    border: 1px solid $Light-grayish-cyan-1 !important;
+  background-color: $Light-grayish-cyan-1 !important;
+  color: $Very-dark-cyan !important;
+  border: 1px solid $Light-grayish-cyan-1 !important;
 }
 
 // error label
 
-.bill-error , .custom-error , .people-number-error {
-    color: red;
-    text-align: right;
+.bill-error,
+.custom-error,
+.people-number-error {
+  color: red;
+  text-align: right;
 }
 // decktop screen
 
 @media (min-width: 1300px) {
-    main {
-        width: 70%;
-        flex-flow: row wrap;
-        align-items: stretch;
-        justify-content: space-between;
+  main {
+    width: 70%;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: space-between;
 
-        .components{
-            width: 45%;
+    .components {
+      width: 45%;
 
-            .tip-value {
-                .btn-5 , .btn-10 , .btn-15 , .btn-25 , .btn-50 , .custom{
-                    width: 30%;
-                }
-            }
-            
-            div {
-                margin-bottom: 25px;
-            }
+      .tip-value {
+        .btn-5,
+        .btn-10,
+        .btn-15,
+        .btn-25,
+        .btn-50,
+        .custom {
+          width: 30%;
         }
-        .result {
-            width: 45%;
-        }
+      }
+
+      div {
+        margin-bottom: 25px;
+      }
     }
+    .result {
+      width: 45%;
+    }
+  }
 }
-

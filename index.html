@@ -1,61 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="/styles/styles.css">
-  
-  <title>Tip calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="/styles/styles.css" />
 
-  <!-- Font Google -->
+    <title>Tip calculator app</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"> 
+    <!-- Font Google -->
 
-</head>
-<body>
-
-  <header>
-    <img class="logo" src="/images/logo.svg" alt="logo image">
-  </header>
-  <main>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <img class="logo" src="/images/logo.svg" alt="logo image" />
+    </header>
+    <main>
       <div class="components">
         <label for="bill">Bill</label>
         <div class="bill-container">
-          <input type="text" name="Bill" id="bill" placeholder="0">
-          <img src="/images/icon-dollar.svg" alt="dollar icon">
+          <input
+            type="text"
+            name="Bill"
+            id="bill"
+            placeholder="0"
+            onfocus="clearInput(this)"
+          />
+          <img src="/images/icon-dollar.svg" alt="dollar icon" />
         </div>
         <p class="bill-error"></p>
-       
-  
+
         <label>Select Tip %</label>
         <div class="tip-value">
-          <button class="btn-5">5%</button>
-          <button class="btn-10">10%</button>
-          <button class="btn-15 selected">15%</button>
-          <button class="btn-25">25%</button>
-          <button class="btn-50">50%</button>
-          <input type="text" class="custom" placeholder="Custom">
+          <button class="btn-5" value="5">5%</button>
+          <button class="btn-10" value="10">10%</button>
+          <button class="btn-15 selected" value="15">15%</button>
+          <button class="btn-25" value="25">25%</button>
+          <button class="btn-50" value="50">50%</button>
+          <input
+            type="text"
+            class="custom"
+            placeholder="Custom"
+            onfocus="clearInput(this)"
+          />
         </div>
         <p class="custom-error"></p>
 
         <label for="people">Number of People</label>
         <div class="people-number">
-          <input type="text" name="People Number" id="people" placeholder="0" class="people-number-value">
-          <img src="/images/icon-person.svg" alt="person icon">
+          <input
+            type="text"
+            name="People Number"
+            id="people"
+            placeholder="0"
+            class="people-number-value"
+            onfocus="clearInput(this)"
+          />
+          <img src="/images/icon-person.svg" alt="person icon" />
         </div>
         <p class="people-number-error"></p>
-        
-  
       </div>
       <div class="result">
-  
         <div class="tip-amount">
-
           <div>
             <h3>Tip Amount</h3>
             <p>/person</p>
@@ -64,31 +83,28 @@
           <div>
             <p class="tip-amount-result">$00.00</p>
           </div>
-          
         </div>
-  
+
         <div class="total">
           <div>
             <h3>Total</h3>
-            <p>/person<p>
+            <p>/person</p>
+            <p></p>
           </div>
 
           <div>
             <p class="total-result">$00.00</p>
-          </div>  
+          </div>
         </div>
-  
+
         <button class="reset">Reset</button>
       </div>
-   
-  </main>
-  <footer>&copy; Ahmed Maher</footer>
+    </main>
+    <footer>&copy; Ahmed Maher</footer>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
-
-
 
 <!-- 
 Bill
