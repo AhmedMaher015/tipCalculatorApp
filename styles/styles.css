@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  background-color: #c5e4e7;
+  font-family: "Space Mono", monospace;
+}
+
+header, footer {
+  padding: 10px;
+  text-align: center;
+}
+
+main {
+  background-color: white;
+  padding: 30px;
+  margin: 15px auto;
+  border-radius: 30px;
+  line-height: 2;
+  display: flex;
+  flex-flow: column nowrap;
+}
+main .components label {
+  font-size: 0.95em;
+  color: #00494d;
+}
+main .components .bill-container {
+  position: relative;
+}
+main .components .bill-container input {
+  width: 100%;
+  background-color: #f4fafa;
+  color: #00494d;
+  padding: 6px 10px;
+  border: 1px solid white;
+  font-size: 1.5em;
+  text-align: right;
+}
+main .components .bill-container input:focus {
+  outline: none;
+}
+main .components .bill-container img {
+  position: absolute;
+  left: 3%;
+  top: 25%;
+}
+main .components .people-number {
+  position: relative;
+}
+main .components .people-number input {
+  width: 100%;
+  background-color: #f4fafa;
+  color: #00494d;
+  padding: 6px 10px;
+  border: 1px solid white;
+  font-size: 1.5em;
+  text-align: right;
+}
+main .components .people-number input:focus {
+  outline: none;
+}
+main .components .people-number img {
+  position: absolute;
+  left: 3%;
+  top: 25%;
+}
+main .components .tip-value {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+main .components .tip-value .btn-5, main .components .tip-value .btn-10, main .components .tip-value .btn-15, main .components .tip-value .btn-25, main .components .tip-value .btn-50 {
+  width: 45%;
+  padding: 5px;
+  font-size: 1.5em;
+  margin: 10px 0px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #00494d;
+  color: white;
+  border: 1px solid #00494d;
+}
+main .components .tip-value .btn-5:focus, main .components .tip-value .btn-10:focus, main .components .tip-value .btn-15:focus, main .components .tip-value .btn-25:focus, main .components .tip-value .btn-50:focus {
+  outline: none;
+}
+main .components .tip-value .custom {
+  width: 45%;
+  padding: 5px;
+  font-size: 1.5em;
+  margin: 10px 0px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #f4fafa;
+  border: 1px solid #f4fafa;
+  color: #00494d;
+}
+main .components .tip-value .custom:focus {
+  outline: none;
+}
+main .result {
+  background-color: #00494d;
+  padding: 15px;
+  margin: 20px 0px;
+  border-radius: 15px;
+  text-align: center;
+}
+main .result .tip-amount, main .result .total {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+main .result .tip-amount h3, main .result .total h3 {
+  color: white;
+  width: max-content;
+  display: inline-block;
+}
+main .result .tip-amount h3 span, main .result .total h3 span {
+  display: block;
+  color: #7f9c9f;
+}
+main .result .tip-amount p, main .result .total p {
+  color: #26c0ab;
+  font-size: 2em;
+}
+main .result .reset {
+  background-color: #26c0ab;
+  color: #00494d;
+  width: 99%;
+  padding: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 7px;
+  border: 1px solid #26c0ab;
+  cursor: pointer;
+}
+main .result .reset:focus {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  main {
+    width: 70%;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  main .components {
+    width: 45%;
+  }
+  main .components .tip-value .btn-5, main .components .tip-value .btn-10, main .components .tip-value .btn-15, main .components .tip-value .btn-25, main .components .tip-value .btn-50, main .components .tip-value .custom {
+    width: 30%;
+  }
+  main .components div {
+    margin-bottom: 25px;
+  }
+  main .result {
+    width: 45%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

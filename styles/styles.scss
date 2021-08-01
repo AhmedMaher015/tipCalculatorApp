@@ -1,0 +1,194 @@
+
+// Colors
+$cyan: hsl(172, 67%, 45%);
+$Very-dark-cyan: hsl(183, 100%, 15%);
+$Dark-grayish-cyan-1: hsl(186, 14%, 43%);
+$Dark-grayish-cyan-2: hsl(184, 14%, 56%);
+$Light-grayish-cyan-1: hsl(185, 41%, 84%);
+$Light-grayish-cyan-2: hsl(189, 41%, 97%);
+$White-color: hsl(0, 0%, 100%);
+
+// input Styles
+@mixin input-style {
+    position: relative;
+
+    input {
+            width: 100%;
+            background-color: $Light-grayish-cyan-2;
+            color: $Very-dark-cyan;
+            padding: 6px 10px;
+            border: 1px solid $White-color;
+            font-size: 1.5em;
+            text-align: right;
+            &:focus {
+                outline: none;
+            }
+        }
+
+    img {
+            position: absolute;
+            left: 3%;
+            top: 25%;
+    }
+}
+
+// btn Style
+@mixin  btn-style($wid) {
+    width: $wid;
+    padding: 5px;
+    font-size: 1.5em;
+    margin: 10px 0px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+
+@mixin  result-total-amount {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: stretch;
+
+    h3 {
+        color: $White-color;
+        width: max-content;
+        display: inline-block;
+        span {
+            display: block;
+            color: $Dark-grayish-cyan-2;
+        }
+    }
+
+    p {
+        color: $cyan;
+        font-size: 2em;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body {
+    background-color: $Light-grayish-cyan-1;
+    font-family: 'Space Mono', monospace;
+}
+
+header , footer {
+    padding: 10px;
+    text-align: center;
+}
+
+main {
+    background-color: $White-color;
+    padding: 30px;
+    margin: 15px auto;
+    border-radius: 30px;
+    line-height: 2;
+    display: flex;
+    flex-flow: column nowrap;
+        .components {
+
+            label {
+                font-size: .95em;
+                color: $Very-dark-cyan;
+            }
+
+            .bill-container {
+                @include input-style();
+            }
+
+            .people-number {
+                @include input-style();
+            }
+
+            .tip-value {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                
+                .btn-5 , .btn-10 , .btn-15 , .btn-25 , .btn-50 {
+                    @include btn-style(45%);
+                    background-color: $Very-dark-cyan;
+                    color: $White-color;
+                    border: 1px solid $Very-dark-cyan;
+                }
+
+                .custom {
+                    @include btn-style(45%);
+                    background-color: $Light-grayish-cyan-2;
+                    border: 1px solid $Light-grayish-cyan-2;
+                    color: $Very-dark-cyan;
+                }
+
+            }
+
+        }
+            
+        
+        .result {
+            background-color: $Very-dark-cyan;
+            padding: 15px;
+            margin: 20px 0px;
+            border-radius: 15px;
+            text-align: center;
+
+            .tip-amount , .total {
+              @include result-total-amount();   
+            }
+
+            .reset {
+                background-color: $cyan;
+                color: $Very-dark-cyan;
+                width: 99%;
+                padding: 10px;
+                font-size: 1.5em;
+                font-weight: bold;
+                border-radius: 7px;
+                border: 1px solid $cyan;
+                cursor: pointer;
+                &:focus {
+                    outline: 0;
+                }
+
+            }
+
+        }
+}
+
+
+// decktop screen
+
+@media (min-width: 768px) {
+    main {
+        width: 70%;
+        flex-flow: row wrap;
+        align-items: stretch;
+        justify-content: space-between;
+
+        .components{
+            width: 45%;
+
+            .tip-value {
+                .btn-5 , .btn-10 , .btn-15 , .btn-25 , .btn-50 , .custom{
+                    width: 30%;
+                }
+            }
+            
+            div {
+                margin-bottom: 25px;
+            }
+        }
+        .result {
+            width: 45%;
+        }
+    }
+}
+
