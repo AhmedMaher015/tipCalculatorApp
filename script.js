@@ -38,6 +38,7 @@ const selectedBtn = (val) => {
   });
   selected.classList.add('selected');
 };
+
 // handling errors
 const handling = (ele, err) => {
   let check = false;
@@ -45,6 +46,7 @@ const handling = (ele, err) => {
     check = true;
   } else {
     err.textContent = 'invalid positive number';
+    ele.style.borderColor = 'red';
   }
   return check;
 };
@@ -52,8 +54,11 @@ const handling = (ele, err) => {
 // clear errors
 const clearError = () => {
   billError.textContent = '';
+  bill.style.borderColor = 'hsl(185, 41%, 84%)';
   peopleNumberError.textContent = '';
+  peopleNumberValue.style.borderColor = 'hsl(185, 41%, 84%)';
   customError.textContent = '';
+  custom.style.borderColor = 'hsl(189, 41%, 97%)';
 };
 
 // clear inputs values on focused
@@ -91,8 +96,8 @@ const calcValues = (tip = Number(selected.value)) => {
 // function display results
 const displayResults = (tipAmo, tot) => {
   clearError();
-  tipAmountResult.textContent = tipAmo.toFixed(2);
-  totalResult.textContent = tot.toFixed(2);
+  tipAmountResult.textContent = '$' + tipAmo.toFixed(2);
+  totalResult.textContent = '$' + tot.toFixed(2);
 };
 
 btns.forEach((val) => {
